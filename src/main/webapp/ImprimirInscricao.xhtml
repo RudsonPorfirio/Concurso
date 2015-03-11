@@ -1,0 +1,79 @@
+
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">Cartão de inscrição</ui:define>
+
+
+	<ui:define name="corpo">
+		<p:messages autoUpdate="true" />
+		<h:form id="frmPesquisa">
+			<h1 style="margin-top: 30px">Cartão de inscrição</h1>
+
+			<p:toolbar style="margin-top: 30px">
+
+
+				<p:toolbarGroup>
+					<p:commandButton value="Pesquisar"
+						action="#{pesquisaUsuarioBean.consultarInscricao()}"
+						update="@form" />
+				</p:toolbarGroup>
+
+
+			</p:toolbar>
+
+
+			<p:panelGrid columnClasses="rotulo, campo" columns="2" id="painel"
+				style="margin-top:20px; width:100%">
+
+				<p:outputLabel value="CPF" for="cpfPesquisa" />
+				<p:inputMask id="cpfPesquisa" mask="999.999.999-99" required="true"
+					value="#{pesquisaUsuarioBean.cpf}" />
+
+
+			</p:panelGrid>
+
+
+			<p:panelGrid columnClasses="rotulo, campo" columns="2" id="paineln"
+				style="margin-top:20px; width:100%">
+
+
+				<p:outputLabel value="Inscrição :" for="ins" />
+				<p:outputLabel value="#{pesquisaUsuarioBean.usuariop.id}" id="ins" />
+
+				<p:outputLabel value="Nome :" for="nome" />
+				<p:outputLabel value="#{pesquisaUsuarioBean.usuariop.nomeCandidato}"
+					id="nome" />
+
+				<p:outputLabel value="CPF" for="cpff" />
+				<p:outputLabel value="#{pesquisaUsuarioBean.usuariop.cpf}" id="cpff" />
+
+				<p:outputLabel value="Cargo" for="cargo" />
+				<p:outputLabel value="#{pesquisaUsuarioBean.usuariop.cargo}"
+					id="cargo" />
+
+
+				<p:outputLabel value="Local da Prova" for="prova" />
+				<p:outputLabel value="#{pesquisaUsuarioBean.localProva}"
+					id="prova" />
+					
+					<p:outputLabel value="Informações :" for="obs" />
+				<p:outputLabel value="#{pesquisaUsuarioBean.descri}"
+					id="obs" />
+
+				<p:outputLabel value="Imprimir" for="bole" />
+				<p:button value="Imprimir" id="bole" onclick="window.print();" />
+
+
+
+			</p:panelGrid>
+		</h:form>
+
+	</ui:define>
+
+
+</ui:composition>

@@ -1,0 +1,77 @@
+
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">Pesquisa de Usuário</ui:define>
+
+
+	<ui:define name="corpo">
+		<h:form id="frmPesquisa">
+			<h1 style="margin-top: 30px">Consultar Situação !</h1>
+
+			<p:toolbar style="margin-top: 30px">
+
+
+				<p:toolbarGroup>
+					<p:commandButton value="Pesquisar"
+						action="#{pesquisaUsuarioBean.consultarInscricao1()}"
+						update="@form" />
+				</p:toolbarGroup>
+
+
+			</p:toolbar>
+
+
+			<p:panelGrid columnClasses="rotulo, campo" columns="2" id="painel"
+				style="margin-top:20px; width:100%">
+
+				<p:outputLabel value="CPF" for="cpfPesquisa" />
+				<p:inputMask id="cpfPesquisa" mask="999.999.999-99" required="true"
+					value="#{pesquisaUsuarioBean.cpf}" />
+
+
+			</p:panelGrid>
+
+
+			<p:panelGrid columnClasses="rotulo, campo" columns="2" id="paineln"
+				style="margin-top:20px; width:100%">
+
+
+				<p:outputLabel value="Nome :" for="nome" />
+				<p:outputLabel value="#{pesquisaUsuarioBean.usuariop.nomeCandidato}" id="nome" />
+
+				<p:outputLabel value="CPF" for="cpff" />
+				<p:outputLabel value="#{pesquisaUsuarioBean.usuariop.cpf}" id="cpff" />
+
+				<p:outputLabel value="NIS" for="nis" />
+					<p:outputLabel value="#{pesquisaUsuarioBean.usuariop.iniz}" id="nis" />
+
+
+				<p:outputLabel value="celular" for="celulaa" />
+				<p:outputLabel value="#{pesquisaUsuarioBean.usuariop.celular}" id="celulaa" />
+
+				<p:outputLabel value="Email" for="ema" />
+				<p:outputLabel value="#{pesquisaUsuarioBean.usuariop.email}" id="ema" />
+
+
+
+				<p:outputLabel value="Situação" for="situ" />
+				<p:outputLabel value="#{pesquisaUsuarioBean.usuariop.situacao}" id="situ" />
+				
+				<p:outputLabel value="Boleto" for="bole" />
+				<p:commandButton value="Boleto" id="bole" action="#{cadastroUsuarioBean.confirmacao()}" />
+				
+				
+				
+
+			</p:panelGrid>
+		</h:form>
+
+	</ui:define>
+
+
+</ui:composition>

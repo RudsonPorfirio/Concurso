@@ -1,0 +1,133 @@
+<ui:composition template="/WEB-INF/template/LayoutPadrao.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+	<ui:define name="titulo">Pagina Login</ui:define>
+
+
+	<ui:define name="corpo">
+		<f:metadata>
+			<f:event listener="#{exemploBopepoJSF.dadoSession()}"
+				type="preRenderView" />
+
+		</f:metadata>
+
+		<h:form id="Exemplo-Bopepo-com-JSF">
+
+
+<h:inputHidden value="#{exemploBopepoJSF.u.id}" />
+
+			<p:panelGrid columns="2" columnClasses="label, value">
+
+				<p:outputLabel for="nomeCandidato" value="Nome Completo" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.nomeCandidato}"
+					id="nomeCandidato" />
+
+
+				<p:outputLabel for="nomePai" value="Nome do Pai" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.nomePai}" id="nomePai" />
+
+
+				<p:outputLabel for="nomeMae" value="Nome da Mae" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.nomeMae}" id="nomeMae" />
+
+				<p:outputLabel value="CPF" for="cpf" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.cpf}" id="cpf" />
+
+				<p:outputLabel value="RG" for="rg" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.rg}" id="rg" />
+
+				<p:outputLabel value="Tipo" for="tipo" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.tipo}" id="tipo" />
+
+				<p:outputLabel value="UF Emissor" for="ufEmissor" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.UF}" id="ufEmissor" />
+
+				<p:outputLabel value="Data Emissao .." for="dataEmissao" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.dataEmissaoRG}"
+					id="dataEmissao" />
+
+				<p:outputLabel value="Cidade Nascimento" for="cidadeNascimento" />
+				<p:outputLabel id="cidadeNascimento"
+					value="#{exemploBopepoJSF.u.cidadeNascimento}" />
+
+				<p:outputLabel value="Data Nascimento" for="dataNascimento" />
+				<p:outputLabel id="dataNascimento"
+					value="#{exemploBopepoJSF.u.dataDeNascimento}" />
+
+
+				<p:outputLabel for="sexo" value="Sexo" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.sexo}" id="sexo" />
+
+
+				<p:outputLabel for="logradouro" value="Endereço" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.endereco.logradouro}"
+					id="logradouro" />
+
+				<p:outputLabel for="complemento" value="Complemento" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.endereco.complemento}"
+					id="complemento" />
+
+				<p:outputLabel value="Bairro" for="bairro" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.endereco.bairro}"
+					id="bairro" />
+
+				<p:outputLabel value="Estado" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.endereco.estado}"
+					id="estado" />
+
+				<p:outputLabel value="Cep" for="cep" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.endereco.cep}" id="cep" />
+
+				<p:outputLabel value="Cidade" for="cidade" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.endereco.cidade}"
+					id="cidade" />
+
+				<p:outputLabel for="email" value="Email" />
+				<p:outputLabel for="email" id="email"
+					value="#{exemploBopepoJSF.u.email}" />
+
+				<h:outputText for="residencial" value="Telefone Residencial " />
+				<h:outputText value="#{exemploBopepoJSF.u.telefone}"
+					id="residencial" />
+
+				<h:outputText for="residencial" value="Telefone Celular " />
+				<h:outputText value="#{exemploBopepoJSF.u.celular}" id="tCelular" />
+
+				<p:outputLabel value="Atendimento em condições especiais:"
+					for="especiais" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.especiais}"
+					id="especiais" />
+
+				<p:outputLabel value="Deficiência Visual:" for="visual" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.defVisual}" id="visual" />
+
+				<p:outputLabel value="Deficiência Auditiva:" for="auditiva" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.defAuditiva}"
+					id="auditiva" />
+
+				<p:outputLabel value="Deficiência Fisica:" for="fisica" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.defFisica}" id="fisica" />
+
+				<p:outputLabel value="Cargo:" for="cargo" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.cargo}" id="cargo" />
+
+				<p:outputLabel value="NIS" for="niz" />
+				<p:outputLabel value="#{exemploBopepoJSF.u.iniz}" id="niz" />
+
+			</p:panelGrid>
+			
+						<h:commandButton action="#{exemploBopepoJSF.download()}"
+				value="Download Do Boleto brancario" />
+
+<p>Caso precise reemprima o boleto na pagina de consulta.</p>
+			
+
+		</h:form>
+	</ui:define>
+
+
+</ui:composition>
